@@ -4,9 +4,9 @@ Un caso de uso fundamental en el desarrollo web: la gestión de usuarios y el co
 
 ---
 
-### Módulo 1: Diseño y Contrato API First
+## Módulo 1: Diseño y Contrato API First
 
-#### Clase 1.1: El Corazón del Proyecto: La Especificación OpenAPI (40 minutos) 🚀
+### Clase 1.1: El Corazón del Proyecto: La Especificación OpenAPI (40 minutos) 🚀
 
 **Contenido Teórico:**
 Comenzamos con el principio fundamental de **API First**: definir el contrato antes de escribir código. Utilizaremos la **OpenAPI Specification (OAS)** como nuestro lenguaje de diseño. Este `openapi.yaml` será nuestra única fuente de verdad para el *frontend*, el *backend* y las pruebas.
@@ -28,7 +28,7 @@ Comenzamos con el principio fundamental de **API First**: definir el contrato an
 
 ---
 
-#### Clase 1.2: Modelos Reutilizables y Endpoints Principales (40 minutos) 👤
+### Clase 1.2: Modelos Reutilizables y Endpoints Principales (40 minutos) 👤
 
 **Contenido Teórico:**
 La modularidad es vital. Para evitar la repetición de código y esquemas, definiremos nuestros modelos de datos en el bloque `components/schemas`. Esto nos permitirá reutilizar la definición del objeto `User` y del `UserRole` en múltiples *endpoints*.
@@ -52,7 +52,7 @@ La modularidad es vital. Para evitar la repetición de código y esquemas, defin
 
 ---
 
-#### Clase 1.3: Autenticación y Autorización en el Contrato (40 minutos) 🔑
+### Clase 1.3: Autenticación y Autorización en el Contrato (40 minutos) 🔑
 
 **Contenido Teórico:**
 El control de acceso es una característica central de este proyecto. Definiremos el *endpoint* de autenticación y los esquemas de seguridad que usarán los demás *endpoints*. Usaremos **JWT (JSON Web Tokens)** como el método de autenticación.
@@ -75,9 +75,9 @@ El control de acceso es una característica central de este proyecto. Definiremo
 
 ---
 
-### Módulo 2: Herramientas de Prototipado y Desarrollo
+## Módulo 2: Herramientas de Prototipado y Desarrollo
 
-#### Clase 2.1: Prototipado Rápido con Mock Servers (40 minutos) 🤖
+### Clase 2.1: Prototipado Rápido con Mock Servers (40 minutos) 🤖
 
 **Contenido Teórico:**
 Con nuestro contrato listo, podemos crear un **servidor *mock*** para simular el comportamiento de la API. Esto permite al equipo de *frontend* comenzar a desarrollar las interfaces sin esperar el *backend*. Utilizaremos **Prism CLI** para esta tarea.
@@ -98,7 +98,7 @@ Con nuestro contrato listo, podemos crear un **servidor *mock*** para simular el
 
 ---
 
-#### Clase 2.2: Construcción del Backend con Node.js y Express (40 minutos) 🏗️
+### Clase 2.2: Construcción del Backend con Node.js y Express (40 minutos) 🏗️
 
 **Contenido Teórico:**
 Es hora de construir la API real. Configuraremos un servidor Express, lo conectaremos a **MongoDB** con Mongoose y crearemos los controladores que implementarán la lógica de negocio de los *endpoints* definidos en la especificación.
@@ -122,7 +122,7 @@ Es hora de construir la API real. Configuraremos un servidor Express, lo conecta
 
 ---
 
-#### Clase 2.3: Validación Automática con `express-openapi-validator` (40 minutos) ✅
+### Clase 2.3: Validación Automática con `express-openapi-validator` (40 minutos) ✅
 
 **Contenido Teórico:**
 Para garantizar que las peticiones y respuestas cumplan siempre con el contrato, integraremos el *middleware* **`express-openapi-validator`**. Esta herramienta automatiza la validación, protegiendo tu API de datos malformados y reduciendo la necesidad de validaciones manuales.
@@ -144,7 +144,7 @@ Para garantizar que las peticiones y respuestas cumplan siempre con el contrato,
 
 ---
 
-#### Clase 2.4: Seguridad y Autorización por Roles (40 minutos) 🔒
+### Clase 2.4: Seguridad y Autorización por Roles (40 minutos) 🔒
 
 **Contenido Teórico:**
 Ahora implementaremos la lógica de seguridad. Usaremos **JWT** para autenticar usuarios y un *middleware* personalizado para la **autorización por roles**. Este *middleware* revisará el rol del usuario en el token y decidirá si tiene permiso para acceder a una ruta específica.
@@ -168,9 +168,9 @@ Ahora implementaremos la lógica de seguridad. Usaremos **JWT** para autenticar 
 
 ---
 
-### Módulo 3: Automatización y Mantenimiento
+## Módulo 3: Automatización y Mantenimiento
 
-#### Clase 3.1: Pruebas Automatizadas con Newman (40 minutos) 🧪
+### Clase 3.1: Pruebas Automatizadas con Newman (40 minutos) 🧪
 
 **Contenido Teórico:**
 La automatización de pruebas es la última pieza de nuestro flujo. Usaremos **Postman** para crear una colección de pruebas y **Newman** para ejecutarlas desde la línea de comandos, asegurando que la API se comporte como se espera.
@@ -194,7 +194,7 @@ La automatización de pruebas es la última pieza de nuestro flujo. Usaremos **P
 
 ---
 
-#### Clase 3.2: Futuro del Proyecto y Próximos Pasos (40 minutos) 📈
+### Clase 3.2: Futuro del Proyecto y Próximos Pasos (40 minutos) 📈
 
 **Contenido Teórico:**
 En esta última clase, revisaremos lo aprendido y discutiremos cómo este módulo de usuarios puede ser la base para futuros proyectos. Exploraremos la escalabilidad de la API y cómo el enfoque API First facilita la integración de nuevas funcionalidades.
