@@ -47,6 +47,8 @@ paths:
   /users/{id}:
     get:
       summary: Obtiene un usuario por su ID
+      security:
+        - bearerAuth: []
       parameters:
         - name: id
           in: path
@@ -61,9 +63,48 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
+        '401':
+          description: No autorizado, token inválido o no proporcionado
+        '403':
+          description: Prohibido, el usuario no tiene permisos para esta acción
         '404':
           description: Usuario no encontrado
+  /auth/login:
+    post:
+      summary: Inicia sesión y obtiene un token JWT
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+              required:
+                - email
+                - password
+      responses:
+        '200':
+          description: Login exitoso, devuelve el token JWT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    format: jwt
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   schemas:
     User:
       type: object
