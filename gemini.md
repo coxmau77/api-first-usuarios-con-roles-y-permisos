@@ -39,7 +39,7 @@ La modularidad es vital. Para evitar la repetición de código y esquemas, defin
 
 **Ejemplo Práctico:**
 * Añade el bloque **`components/schemas`**.
-* Define el esquema `User`, incluyendo campos como `username`, `email`, `password` (con validación de `minLength`, `maxLength`, etc.) y `role` como un *enum* con los valores 'admin', 'editor' y 'viewer'.
+* Define el esquema `User`, incluyendo campos como `username`, `email`,`birthdate`, `password` (con validación de `minLength`, `maxLength`, etc.) y `role` como un *enum* con los valores 'admin', 'editor' y 'viewer'.
 * Define los *endpoints* principales en el bloque **`paths`**:
     * **`POST /users`**: Para crear un usuario. Usa `requestBody` y `response 201`.
     * **`GET /users`**: Para listar usuarios. Usa `response 200` y define un *array* de usuarios.

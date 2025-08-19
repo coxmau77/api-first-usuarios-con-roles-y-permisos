@@ -1,0 +1,102 @@
+openapi: 3.0.0
+info:
+  title: API de Usuarios con Roles y Permisos
+  version: 1.0.0
+  description: Esta API permite gestionar usuarios, roles y permisos en el sistema.
+servers:
+  - url: http://localhost:3000
+    description: Servidor de desarrollo
+paths:
+  /hello:
+    get:
+      summary: Saluda al usuario
+      responses:
+        '200':
+          description: Saludo exitoso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Hola, usuario!'
+  /users:
+    post:
+      summary: Crea un nuevo usuario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: Usuario creado exitosamente
+    get:
+      summary: Obtiene una lista de usuarios
+      responses:
+        '200':
+          description: Lista de usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+  /users/{id}:
+    get:
+      summary: Obtiene un usuario por su ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Detalles del usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: Usuario no encontrado
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'
+        username:
+          type: string
+          example: 'johndoe'
+        email:
+          type: string
+          format: email
+          example: 'johndoe@example.com'
+        birthdate:
+          type: string
+          format: date
+          example: '1990-01-01'
+        password:
+          type: string
+          format: password
+          minLength: 8
+          maxLength: 30
+        role:
+          type: string
+          enum:
+            - admin
+            - editor
+            - viewer
+      required:
+        - username
+        - email
+        - birthdate
+        - password
+        - role
