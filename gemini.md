@@ -90,6 +90,10 @@ Con nuestro contrato listo, podemos crear un **servidor *mock*** para simular el
 * Añade **ejemplos (`examples`)** a tus esquemas en el `openapi.yaml` para que el *mock* sepa qué datos retornar.
 * Instala Prism CLI: `npm install -g @stoplight/prism-cli`.
 * Inicia el servidor *mock* desde tu terminal: `prism mock openapi.yaml`.
+Ahora puedes probar tu API. Por ejemplo, puedes abrir una nueva terminal y usar curl para hacer una petición a la lista de usuarios:
+`1 curl -X GET http://localhost:4010/users`
+Deberías recibir como respuesta un array de JSON con el usuario de
+ejemplo que definimos. ¡Tu openapi.yaml ha cobrado vida!
 
 **Estructura Pedagógica:**
 1.  El concepto de *mocking* y sus beneficios.

@@ -1,0 +1,25 @@
+{
+  "name": "api-first-usuarios-con-roles-y-permisos",
+  "version": "1.0.0",
+  "description": "Este proyecto es una implementación de una API RESTful para gestionar usuarios, roles y permisos, siguiendo la metodología de desarrollo **API First**. El contrato de la API se define y valida con **OpenAPI**, garantizando una fuente de verdad única para todos los equipos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coxmau77/api-first-usuarios-con-roles-y-permisos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coxmau77/api-first-usuarios-con-roles-y-permisos/issues"
+  },
+  "homepage": "https://github.com/coxmau77/api-first-usuarios-con-roles-y-permisos#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.2"
+  }
+}
