@@ -1,34 +1,3 @@
-Disculpa, no me percaté de la restricción de caracteres para la descripción de GitHub. Tienes razón, el límite es de 160 caracteres, no de 350. Es un error mío y me aseguro de corregirlo.
-
-Aquí tienes una nueva descripción más concisa que cumple con el límite de GitHub, junto con los tags y el resto de la información para tu `README.md`.
-
-
-### Descripción para el Repositorio (158 caracteres)
-
-> API de usuarios con roles y permisos, construida con Node.js, Express y MongoDB. Se adhiere a la metodología API First con OpenAPI, JWT y validación automática.
-
-
-### Tags para el Repositorio
-
-  * `api-first`
-  * `openapi`
-  * `swagger`
-  * `node.js`
-  * `express.js`
-  * `mongodb`
-  * `mongoose`
-  * `jwt`
-  * `authentication`
-  * `authorization`
-  * `backend`
-  * `rest-api`
-  * `fullstack`
-
-
-### Información para el `README.md`
-
-Este es el borrador completo para el archivo `README.md` de tu proyecto. He usado una estructura estándar que incluye una visión general, una guía de configuración y detalles técnicos.
-
 # API de Usuarios con Roles y Permisos 🔑
 
 Este proyecto es una implementación de una API RESTful para gestionar usuarios, roles y permisos, siguiendo la metodología de desarrollo **API First**. El contrato de la API se define y valida con **OpenAPI**, garantizando una fuente de verdad única para todos los equipos.
