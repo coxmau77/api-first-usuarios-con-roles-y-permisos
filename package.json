@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Este proyecto es una implementación de una API RESTful para gestionar usuarios, roles y permisos, siguiendo la metodología de desarrollo **API First**. El contrato de la API se define y valida con **OpenAPI**, garantizando una fuente de verdad única para todos los equipos.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
