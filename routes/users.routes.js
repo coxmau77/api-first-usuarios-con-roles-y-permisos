@@ -7,10 +7,10 @@ import {
 
 const router = express.Router();
 
-// @route   POST /api/users & GET /api/users
+// @route   POST /users & GET /users
 router.route('/').post(registerUser).get(getUsers);
 
-// @route   GET /api/users/:id
+// @route   GET /users/:id
 router.route('/:id').get(getUser);
 
 export default router;

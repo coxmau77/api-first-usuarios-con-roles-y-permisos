@@ -2,6 +2,8 @@
 
 Un caso de uso fundamental en el desarrollo web: la gestión de usuarios y el control de acceso. En este proyecto, construiremos una API robusta y bien documentada, aplicando la metodología **API First** para garantizar un desarrollo eficiente y escalable.
 
+> **Nota:** Fin de la clase. Haz un commit para guardar tu progreso.
+
 ---
 
 ## Módulo 1: Diseño y Contrato API First
@@ -25,6 +27,8 @@ Comenzamos con el principio fundamental de **API First**: definir el contrato an
 1.  Introducción a la metodología API First.
 2.  Explicación de la importancia de OpenAPI.
 3.  Creación del archivo `openapi.yaml` y su estructura inicial.
+
+> **Nota:** Fin de la clase. Haz un commit para guardar tu progreso.
 
 ---
 
@@ -50,6 +54,8 @@ La modularidad es vital. Para evitar la repetición de código y esquemas, defin
 2.  Definición detallada del esquema `User` y `UserRole`.
 3.  Implementación de los *endpoints* de lectura y creación.
 
+> **Nota:** Fin de la clase. Haz un commit para guardar tu progreso.
+
 ---
 
 ### Clase 1.3: Autenticación y Autorización en el Contrato (40 minutos) 🔑
@@ -72,6 +78,8 @@ El control de acceso es una característica central de este proyecto. Definiremo
 2.  Definición del *endpoint* de *login*.
 3.  Configuración de `securitySchemes` para JWT.
 4.  Protección de los *endpoints* principales.
+
+> **Nota:** Fin de la clase. Haz un commit para guardar tu progreso.
 
 ---
 
@@ -100,6 +108,8 @@ ejemplo que definimos. ¡Tu openapi.yaml ha cobrado vida!
 2.  Configuración de ejemplos en el `openapi.yaml`.
 3.  Uso de Prism CLI para levantar el servidor *mock*.
 
+> **Nota:** Fin de la clase. Haz un commit para guardar tu progreso.
+
 ---
 
 ### Clase 2.2: Construcción del Backend con Node.js y Express (40 minutos) 🏗️
@@ -116,13 +126,23 @@ Es hora de construir la API real. Configuraremos un servidor Express, lo conecta
 * Instala las dependencias principales: `npm install express mongoose dotenv`.
 * Crea el archivo de conexión a MongoDB.
 * Define el modelo `User` con Mongoose, reflejando el esquema de OpenAPI.
-* Crea un archivo de rutas (`userRoutes.js`) y un controlador (`userController.js`) para manejar las operaciones CRUD.
+* Crea un archivo de rutas (`userRoutes.js`).
+* **Implementa la lógica en el controlador (`userController.js`):**
+    *   Usa funciones `async/await` para manejar las operaciones de la base de datos.
+    *   En la función `registerUser`, extrae los datos del `req.body` y usa `User.create()` para guardar un nuevo usuario. Devuelve un estado `201`.
+    *   En la función `getUsers`, usa `User.find()` para obtener todos los usuarios.
+    *   En la función `getUser`, usa `User.findById()` con el `req.params.id` para buscar un usuario específico. Maneja el caso de que el usuario no se encuentre y devuelve un `404`.
+    *   Envuelve la lógica en bloques `try...catch` para manejar errores.
 
 **Estructura Pedagógica:**
 1.  Introducción a la implementación del *backend*.
 2.  Configuración del entorno de Node.js.
 3.  Conexión a MongoDB y creación del modelo Mongoose.
 4.  Estructuración de rutas y controladores.
+5.  **Implementación de la lógica de negocio (CRUD) en los controladores usando Mongoose.**
+6.  **Manejo de errores y códigos de estado HTTP correctos.**
+
+> **Nota:** Fin de la clase. Haz un commit para guardar tu progreso.
 
 ---
 
@@ -134,17 +154,21 @@ Para garantizar que las peticiones y respuestas cumplan siempre con el contrato,
 **Observaciones del Instructor:**
 * **La red de seguridad:** Este *middleware* es una red de seguridad vital. Atrapa errores de validación antes de que lleguen a la lógica de tu negocio.
 * **El lugar correcto:** Asegúrate de registrar el *middleware* en el lugar correcto del flujo de Express para que pueda interceptar las peticiones a tiempo.
+* **¡El contrato es bidireccional!:** Al activar `validateResponses: true`, el validador no solo revisa las peticiones que llegan, sino también las respuestas que salen. Si la estructura del JSON que devuelve tu controlador no es **idéntica** a la definida en el esquema de `openapi.yaml`, el validador lanzará un error y provocará una respuesta `500 Internal Server Error`. ¡El contrato es la ley!
 
 **Ejemplo Práctico:**
 * Instala el validador: `npm install express-openapi-validator`.
-* En tu archivo principal de Express, carga el `openapi.yaml` y registra el *middleware* `OpenApiValidator` en tu `app`.
+* En tu archivo principal de Express, carga el `openapi.yaml` y registra el *middleware* `OpenApiValidator` en tu `app`. Asegúrate de configurar `validateResponses: true`.
 * Prueba a enviar una petición `POST /users` con un *email* incorrecto o un `role` que no está en el *enum*. Confirma que el validador retorna un error `400 Bad Request`.
+* Verifica que las respuestas de tus controladores (ej. `GET /users`) coincidan exactamente con lo definido en `openapi.yaml` para evitar errores 500.
 
 **Estructura Pedagógica:**
 1.  Necesidad de validación en tiempo de ejecución.
 2.  Introducción a `express-openapi-validator`.
 3.  Configuración e integración en el proyecto.
-4.  Demostración de su funcionalidad.
+4.  Demostración de su funcionalidad para validar peticiones y la importancia de validar respuestas.
+
+> **Nota:** Fin de la clase. Haz un commit para guardar tu progreso.
 
 ---
 
@@ -169,6 +193,8 @@ Ahora implementaremos la lógica de seguridad. Usaremos **JWT** para autenticar 
 2.  Creación de los *endpoints* de autenticación.
 3.  Implementación del *middleware* de autenticación.
 4.  Implementación del *middleware* de autorización.
+
+> **Nota:** Fin de la clase. Haz un commit para guardar tu progreso.
 
 ---
 
@@ -196,6 +222,8 @@ La automatización de pruebas es la última pieza de nuestro flujo. Usaremos **P
 3.  Introducción a Newman y su integración.
 4.  Ejecución de las pruebas.
 
+> **Nota:** Fin de la clase. Haz un commit para guardar tu progreso.
+
 ---
 
 ### Clase 3.2: Futuro del Proyecto y Próximos Pasos (40 minutos) 📈
@@ -212,3 +240,5 @@ En esta última clase, revisaremos lo aprendido y discutiremos cómo este módul
 2.  Discusión de la escalabilidad y mantenimiento.
 3.  Ideas de integración para un *ecommerce*.
 4.  Resumen de los beneficios de la metodología.
+
+> **Nota:** Fin de la clase. Haz un commit para guardar tu progreso.
